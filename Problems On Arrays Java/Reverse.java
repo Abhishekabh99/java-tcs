@@ -20,6 +20,15 @@ static int[] input_array() {
     }
     return arr;
 }
+
+void display(int[] arr) {
+    int i=0;
+    while(i<arr.length) {
+        System.out.println(arr[i]);
+        i++;
+    }
+}
+
 //method 1 make a new array
 int[] reverse(int[] arr) {
     int s = arr.length;
@@ -42,13 +51,6 @@ while(s<e) {
     e--;
 }
 return arr;
-}
-void display(int[] arr) {
-    int i=0;
-    while(i<arr.length) {
-        System.out.println(arr[i]);
-        i++;
-    }
 }
 
 //method 3 using recursion
