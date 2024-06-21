@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class FreqOfEachElem {
     public static void main(String[] args) {
@@ -7,7 +7,8 @@ int[] arr = input_array();
 
 
 FreqOfEachElem ob = new FreqOfEachElem();
-ob.feqOfEachElemUsingSlidingWindow(arr);
+
+ob.freqOfEachElemUsingMap(arr);
     }
 static int[] input_array() {
     System.out.println("Enter size of array :");
@@ -50,7 +51,20 @@ count++;
 // method 2 using hash maps
 void freqOfEachElemUsingMap(int[] arr) {
 
+    Map<Integer, Integer> map = new HashMap<>();
 
+    for(int i=0;i<arr.length;i++) {
+        if(map.containsKey(arr[i])) {
+            map.put(arr[i], map.get(arr[i])+1);
+        }
+        else {
+            map.put(arr[i],1);
+        }
+    }
+    // Traverse through map and print frequencies
+    for(Map.Entry<Integer,Integer> entry : map.entrySet()) {
+        System.out.println(entry.getKey() + " "+entry.getValue());
+    }
     
 }
 
